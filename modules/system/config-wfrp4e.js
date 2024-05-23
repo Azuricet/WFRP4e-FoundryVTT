@@ -1755,6 +1755,7 @@ WFRP4E.PrepareSystemItems = function() {
                     applicationData : {
                         conditionTrigger : "endRound"
                     },
+
                     scriptData: [
                         {
                             trigger: "manual",
@@ -2052,6 +2053,31 @@ WFRP4E.PrepareSystemItems = function() {
             id: "surprised",
             statuses: ["surprised"],
             name: "WFRP4E.ConditionName.Surprised",
+            flags: {
+                wfrp4e: {
+                    applicationData : {},
+                    scriptData: [
+                        {
+                            trigger: "dialog",
+                            label : "Bonus to melee attacks",
+                            script : `args.fields.modifier += 20`,
+                            options : {
+                                dialog : {
+                                    targeter : true,
+                                    hideScript : "return args.item?.system.attackType != 'melee'",
+                                    activateScript : "return args.item?.system.attackType == 'melee'"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            icon: "systems/wfrp4e/icons/conditions/surprised.png",
+            id: "stressed",
+            statuses: ["stressed"],
+            name: "WFRP4E.ConditionName.Stressed",
             flags: {
                 wfrp4e: {
                     applicationData : {},
