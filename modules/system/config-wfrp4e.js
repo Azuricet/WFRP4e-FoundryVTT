@@ -1786,7 +1786,7 @@ WFRP4E.PrepareSystemItems = function() {
                         {
                             trigger: "dialog",
                             label : "@effect.name",
-                            script : `args.fields.modifier -= 10 * this.effect.conditionValue`,
+                            script : `args.fields.modifier -= 5 * this.effect.conditionValue`,
                             options : {
                                 dialog : {
                                     activateScript : "return true"
