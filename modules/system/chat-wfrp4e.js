@@ -378,8 +378,8 @@ export default class ChatWFRP {
     let originalAmount = MarketWfrp4e.parseMoneyTransactionString(originalPayString)
     let currentAmount = MarketWfrp4e.parseMoneyTransactionString(payString)
 
-    let originalBPAmount = originalAmount.gc * 240 + originalAmount.ss * 12 + originalAmount.bp
-    let bpAmount = currentAmount.gc * 240 + currentAmount.ss * 12 + currentAmount.bp
+    let originalBPAmount = originalAmount.gc * 10000 + originalAmount.ss * 100 + originalAmount.bp
+    let bpAmount = currentAmount.gc * 10000 + currentAmount.ss * 100 + currentAmount.bp
     bpAmount += Math.round((originalBPAmount * .1)) * multiplier
 
     let newAmount = MarketWfrp4e.makeSomeChange(bpAmount, 0)

@@ -449,8 +449,10 @@ export default class TestWFRP {
     }
 
     if (this.options.rest) {
-      this.result.woundsHealed = Math.max(Math.trunc(this.result.SL) + this.options.tb, 0);
+      this.result.woundsHealed = Math.max(Math.trunc(this.result.SL) + 1 + (1 * this.options.tb), 1);
       this.result.other.push(`${this.result.woundsHealed} ${game.i18n.localize("Wounds Healed")}`)
+      this.result.manaHealed = Math.max(Math.trunc(this.result.SL) + 2 + (2 * this.options.tb), 1);
+      this.result.other.push(`${this.result.manaHealed} ${game.i18n.localize("Mana regagné")}`)
     }
   }
 

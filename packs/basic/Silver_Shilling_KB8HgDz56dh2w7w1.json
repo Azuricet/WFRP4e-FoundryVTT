@@ -38,7 +38,7 @@
     "coinValue": {
       "label": "Value (in d)",
       "type": "Number",
-      "value": 12
+      "value": 100
     },
     "source": {
       "type": "String",

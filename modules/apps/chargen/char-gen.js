@@ -33,7 +33,6 @@ export default class CharGenWfrp4e extends FormApplication {
         bs: {initial: 0, advances : 0},
         s: {initial: 0, advances : 0},
         t: {initial: 0, advances : 0},
-        i: {initial: 0, advances : 0},
         ag: {initial: 0, advances : 0},
         dex: {initial: 0, advances : 0},
         int: {initial: 0, advances : 0},

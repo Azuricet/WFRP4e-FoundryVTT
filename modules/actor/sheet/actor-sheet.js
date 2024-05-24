@@ -1943,7 +1943,7 @@ export default class ActorSheetWfrp4e extends WFRP4eSheetMixin(ActorSheet) {
       if (currentGC && currentSS && currentGC.system.quantity.value )
       {
         currentGC.system.quantity.value -= 1;
-        currentSS.system.quantity.value += 20
+        currentSS.system.quantity.value += 100
         return this.actor.updateEmbeddedDocuments("Item", [currentGC, currentSS])
       }
       else
@@ -1958,7 +1958,7 @@ export default class ActorSheetWfrp4e extends WFRP4eSheetMixin(ActorSheet) {
       if (currentBP && currentSS  && currentSS.system.quantity.value)
       {
         currentSS.system.quantity.value -= 1;
-        currentBP.system.quantity.value += 12
+        currentBP.system.quantity.value += 100
         return this.actor.updateEmbeddedDocuments("Item", [currentBP, currentSS])
       }
       else

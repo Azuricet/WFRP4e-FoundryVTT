@@ -268,7 +268,7 @@ WFRP4E.characteristics = {
     "bs": "CHAR.BS",
     "s": "CHAR.S",
     "t": "CHAR.T",
-    "i": "CHAR.I",
+//    "i": "CHAR.I",
     "ag": "CHAR.Ag",
     "dex": "CHAR.Dex",
     "int": "CHAR.Int",
@@ -282,7 +282,7 @@ WFRP4E.characteristicsAbbrev = {
     "bs": "CHARAbbrev.BS",
     "s": "CHARAbbrev.S",
     "t": "CHARAbbrev.T",
-    "i": "CHARAbbrev.I",
+//    "i": "CHARAbbrev.I",
     "ag": "CHARAbbrev.Ag",
     "dex": "CHARAbbrev.Dex",
     "int": "CHARAbbrev.Int",
@@ -296,7 +296,7 @@ WFRP4E.characteristicsBonus = {
     "bs": "CHARBonus.BS",
     "s": "CHARBonus.S",
     "t": "CHARBonus.T",
-    "i": "CHARBonus.I",
+//    "i": "CHARBonus.I",
     "ag": "CHARBonus.Ag",
     "dex": "CHARBonus.Dex",
     "int": "CHARBonus.Int",
@@ -310,8 +310,8 @@ WFRP4E.skillTypes = {
 };
 
 WFRP4E.xpCost = {
-    "characteristic": [25, 30, 40, 50, 70, 90, 120, 150, 190, 230, 280, 330, 390, 450, 520],
-    "skill": [10, 15, 20, 30, 40, 60, 80, 110, 140, 180, 220, 270, 320, 380, 440]
+    "characteristic": [0],
+    "skill": [0]
 }
 
 WFRP4E.skillGroup = {
@@ -446,7 +446,18 @@ WFRP4E.weaponQualities = {
     "shield": "PROPERTY.Shield",
     "trapblade": "PROPERTY.TrapBlade",
     "unbreakable": "PROPERTY.Unbreakable",
-    "wrap": "PROPERTY.Wrap"
+    "wrap": "PROPERTY.Wrap",
+    "avantageux": "PROPERTY.Avantageux",
+    "contondant": "PROPERTY.Contondant",
+    "desarmant": "PROPERTY.Desarmant",
+    "destabilisant": "PROPERTY.Destabilisant",
+    "dominant": "PROPERTY.Dominant",
+    "fracassant": "PROPERTY.Fracassant",
+    "hemorragique": "PROPERTY.Hemorragique",
+    "impitoyable": "PROPERTY.Impitoyable",
+    "pointfaible": "PROPERTY.PointFaible",
+    "trebucher": "PROPERTY.Trebucher",
+    "tueur": "PROPERTY.Tueur"
 };
 
 // Weapon Flaws
@@ -511,7 +522,18 @@ WFRP4E.propertyHasValue = {
     "flexible": false,
     "impenetrable": false,
     "partial": false,
-    "weakpoints": false
+    "weakpoints": false,
+    "avantageux": false,
+    "contondant": false,
+    "desarmant": false,
+    "destabilisant": false,
+    "dominant": false,
+    "fracassant": false,
+    "hemorragique": false,
+    "impitoyable": false,
+    "pointfaible": false,
+    "trebucher": false,
+    "tueur": false
 }
 
 // Equipment Types
@@ -587,11 +609,14 @@ WFRP4E.locations = {
 
 // Trapping Availability
 WFRP4E.availability = {
-    "None": "-",
-    "common": "WFRP4E.Availability.Common",
-    "scarce": "WFRP4E.Availability.Scarce",
+    "none": "-",
+    "anodin": "WFRP4E.Availability.Anodin",
+    "ordinaire": "WFRP4E.Availability.Ordinaire",
+    "frequent": "WFRP4E.Availability.Frequent",
+    "inhabituel": "WFRP4E.Availability.Inhabituel",
     "rare": "WFRP4E.Availability.Rare",
-    "exotic": "WFRP4E.Availability.Exotic",
+    "exceptionnel": "WFRP4E.Availability.Exceptionnel",
+    "mythique": "WFRP4E.Availability.Mythique",
     "special": "WFRP4E.Availability.Special",
 }
 
@@ -720,6 +745,9 @@ WFRP4E.conditions = {
     "entangled": "WFRP4E.ConditionName.Entangled",
     "fatigued": "WFRP4E.ConditionName.Fatigued",
     "poisoned": "WFRP4E.ConditionName.Poisoned",
+    "apeure": "WFRP4E.ConditionName.Apeure",
+    "stresse": "WFRP4E.ConditionName.Stresse",
+    "demoralise": "WFRP4E.ConditionName.Demoralise",
     "prone": "WFRP4E.ConditionName.Prone",
     "stunned": "WFRP4E.ConditionName.Stunned",
     "surprised": "WFRP4E.ConditionName.Surprised",
@@ -834,57 +862,123 @@ WFRP4E.PSEUDO_ENTITIES = [
 
 WFRP4E.availabilityTable = {
     "MARKET.Village": {
-        "WFRP4E.Availability.Common": {
+        "WFRP4E.Availability.Anodin": {
             test: 100,
-            stock: '2'
+            stock: '2d6'
         },
-        "WFRP4E.Availability.Scarce": {
-            test: 30,
-            stock: '1'
+        "WFRP4E.Availability.Ordinaire": {
+            test: 70,
+            stock: '1d6'
+        },
+        "WFRP4E.Availability.Frequent": {
+            test: 50,
+            stock: '1d4'
+        },
+        "WFRP4E.Availability.Inhabituel": {
+            test: 25,
+            stock: '1d2'
         },
         "WFRP4E.Availability.Rare": {
-            test: 15,
+            test: 5,
             stock: '1'
         },
-        "WFRP4E.Availability.Exotic": {
+        "WFRP4E.Availability.Exceptionnel": {
+            test: 0,
+            stock: '0'
+        },
+        "WFRP4E.Availability.Mythique": {
             test: 0,
             stock: '0'
         }
     },
     "MARKET.Town": {
-        "WFRP4E.Availability.Common": {
+        "WFRP4E.Availability.Anodin": {
             test: 100,
-            stock: '2d10'
+            stock: '3d6'
         },
-        "WFRP4E.Availability.Scarce": {
-            test: 60,
-            stock: '1d10'
+        "WFRP4E.Availability.Ordinaire": {
+            test: 90,
+            stock: '2d6'
+        },
+        "WFRP4E.Availability.Frequent": {
+            test: 70,
+            stock: '1d6'
+        },
+        "WFRP4E.Availability.Inhabituel": {
+            test: 40,
+            stock: '1d4'
         },
         "WFRP4E.Availability.Rare": {
-            test: 30,
-            stock: '1d5'
+            test: 15,
+            stock: '1d2'
         },
-        "WFRP4E.Availability.Exotic": {
+        "WFRP4E.Availability.Exceptionnel": {
+            test: 5,
+            stock: '1'
+        },
+        "WFRP4E.Availability.Mythique": {
             test: 0,
             stock: '0'
         }
     },
     "MARKET.City": {
-        "WFRP4E.Availability.Common": {
+        "WFRP4E.Availability.Anodin": {
             test: 100,
-            stock: '∞'
+            stock: '4d6'
         },
-        "WFRP4E.Availability.Scarce": {
+        "WFRP4E.Availability.Ordinaire": {
+            test: 100,
+            stock: '3d6'
+        },
+        "WFRP4E.Availability.Frequent": {
             test: 90,
-            stock: '∞'
+            stock: '2d6'
+        },
+        "WFRP4E.Availability.Inhabituel": {
+            test: 60,
+            stock: '1d6'
         },
         "WFRP4E.Availability.Rare": {
-            test: 45,
-            stock: '∞'
+            test: 30,
+            stock: '1d4'
         },
-        "WFRP4E.Availability.Exotic": {
-            test: 0,
-            stock: '0'
+        "WFRP4E.Availability.Exceptionnel": {
+            test: 10,
+            stock: '1d2'
+        },
+        "WFRP4E.Availability.Mythique": {
+            test: 5,
+            stock: '1'
+        }
+    },
+    "MARKET.Capital": {
+        "WFRP4E.Availability.Anodin": {
+            test: 100,
+            stock: '5d6'
+        },
+        "WFRP4E.Availability.Ordinaire": {
+            test: 100,
+            stock: '4d6'
+        },
+        "WFRP4E.Availability.Frequent": {
+            test: 100,
+            stock: '3d6'
+        },
+        "WFRP4E.Availability.Inhabituel": {
+            test: 80,
+            stock: '2d6'
+        },
+        "WFRP4E.Availability.Rare": {
+            test: 50,
+            stock: '1d6'
+        },
+        "WFRP4E.Availability.Exceptionnel": {
+            test: 20,
+            stock: '1d4'
+        },
+        "WFRP4E.Availability.Mythique": {
+            test: 10,
+            stock: '1d2'
         }
     }
 }
@@ -1020,15 +1114,16 @@ WFRP4E.moneyNames = {
 }
 
 WFRP4E.moneyValues = {
-    "gc" : 240,
-    "ss" : 20,
+    "gc" : 10000,
+    "ss" : 100,
     "bp" : 1
 }
 
 WFRP4E.hitLocationTables = {
     "hitloc": "WFRP4E.hitLocationTables.hitloc",
     "snake": "WFRP4E.hitLocationTables.snake",
-    "spider": "WFRP4E.hitLocationTables.spider"
+    "spider": "WFRP4E.hitLocationTables.spider",
+    "horse": "WFRP4E.hitLocationTables.horse"
 }
 
 WFRP4E.extendedTestCompletion = {
@@ -1759,7 +1854,7 @@ WFRP4E.PrepareSystemItems = function() {
                     scriptData: [
                         {
                             trigger: "manual",
-                            label : "@effect.name",
+                            label : "Subir les dégâts dûs au poison",
                             script : `let actor = this.actor;
                             let effect = this.effect;
                             let msg = ""
@@ -1786,7 +1881,7 @@ WFRP4E.PrepareSystemItems = function() {
                         },
                         {
                             trigger: "dialog",
-                            label : "@effect.name",
+                            label : "-5 par état à tous les tests (@effect.name)",
                             script : `args.fields.modifier -= 5 * this.effect.conditionValue`,
                             options : {
                                 dialog : {
@@ -1887,7 +1982,7 @@ WFRP4E.PrepareSystemItems = function() {
                     scriptData: [
                         {
                             trigger: "dialog",
-                            label : "Penalty to all Tests (@effect.name)",
+                            label : "-10 par état à tous les tests (@effect.name)",
                             script : `args.fields.modifier -= 10 * this.effect.conditionValue`,
                             options : {
                                 dialog : {
@@ -1941,7 +2036,7 @@ WFRP4E.PrepareSystemItems = function() {
                     scriptData: [
                         {
                             trigger: "dialog",
-                            label : "Penalty to all Tests (@effect.name)",
+                            label : "-10 par état à tous les tests (@effect.name)",
                             script : `args.fields.modifier -= 10 * this.effect.conditionValue`,
                             options : {
                                 dialog : {
@@ -2014,6 +2109,80 @@ WFRP4E.PrepareSystemItems = function() {
             }
         },
         {
+            icon: "systems/wfrp4e/icons/conditions/fear.png",
+            id: "apeure",
+            statuses: ["apeure"],
+            name: "WFRP4E.ConditionName.Apeure",
+            flags: {
+                wfrp4e: {
+                    value: 1,
+                    applicationData : {},
+                    scriptData: [
+                        {
+                            trigger: "dialog",
+                            label : "-5 par état à tous les tests (@effect.name)",
+                            script : `args.fields.modifier -= 5 * this.effect.conditionValue`,
+                            options : {
+                                dialog : {
+                                    activateScript : "return true"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            icon: "systems/wfrp4e/icons/conditions/fear.png",
+            id: "stresse",
+            statuses: ["stresse"],
+            name: "WFRP4E.ConditionName.Stresse",
+            flags: {
+                wfrp4e: {
+                    value: 1,
+                    applicationData : {},
+                    scriptData: [
+                        {
+                            trigger: "dialog",
+                            label : "Penalité aux coups critiques (@effect.name)",
+                            script : `args.fields.modifier -= 0 * this.effect.conditionValue`,
+                            options : {
+                                dialog : {
+                                    activateScript : "return true"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+         {
+            icon: "systems/wfrp4e/icons/conditions/fear.png",
+            id: "demoralise",
+            statuses: ["demoralise"],
+            name: "WFRP4E.ConditionName.Demoralise",
+            flags: {
+                wfrp4e: {
+                    value: 1,
+                    applicationData : {},
+                    scriptData: [
+                        {
+                            trigger: "dialog",
+                            label : "-5 en Int, Sag et Élo (@effect.name)",
+                            script : `args.fields.modifier -= 5`,
+                            options : {
+                                dialog : {
+                                    activateScript : "return ['int', 'wp', 'fel'].includes(args.characteristic)",
+                                    hideScript : "return ['ws', 'bs', 's', 't', 's', 'i', 'ag', 'dex'].includes(args.characteristic)"
+                                }
+
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        {
             icon: "systems/wfrp4e/icons/conditions/prone.png",
             id: "prone",
             statuses: ["prone"],
@@ -2073,32 +2242,7 @@ WFRP4E.PrepareSystemItems = function() {
                 }
             }
         },
-        {
-            icon: "systems/wfrp4e/icons/conditions/surprised.png",
-            id: "stressed",
-            statuses: ["stressed"],
-            name: "WFRP4E.ConditionName.Stressed",
-            flags: {
-                wfrp4e: {
-                    applicationData : {},
-                    scriptData: [
-                        {
-                            trigger: "dialog",
-                            label : "Bonus to melee attacks",
-                            script : `args.fields.modifier += 20`,
-                            options : {
-                                dialog : {
-                                    targeter : true,
-                                    hideScript : "return args.item?.system.attackType != 'melee'",
-                                    activateScript : "return args.item?.system.attackType == 'melee'"
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
-        },
-        {
+               {
             icon: "systems/wfrp4e/icons/conditions/unconscious.png",
             id: "unconscious",
             statuses: ["unconscious"],

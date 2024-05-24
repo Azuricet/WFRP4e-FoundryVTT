@@ -224,7 +224,7 @@ export default class MarketWfrp4e {
           for (let m of moneyItemInventory)
             totalBPAvailable += m.system.quantity.value * m.system.coinValue.value;
 
-          let totalBPPay = moneyToPay.gc * 240 + moneyToPay.ss * 12 + moneyToPay.bp;
+          let totalBPPay = moneyToPay.gc * 10000 + moneyToPay.ss * 100 + moneyToPay.bp;
 
           //Does we have enough money in the end?
           if (totalBPAvailable < totalBPPay) {
@@ -275,11 +275,11 @@ export default class MarketWfrp4e {
   static checkCharacterMoneyValidity(moneyItemInventory, characterMoney) {
     for (let m = 0; m < moneyItemInventory.length; m++) {
       switch (moneyItemInventory[m].system.coinValue.value) {
-        case 240://gc
+        case 10000://gc
           if (characterMoney.gc === false)
             characterMoney.gc = m;
           break;
-        case 12://ss
+        case 100://ss
           if (characterMoney.ss === false)
             characterMoney.ss = m;
           break;
@@ -413,10 +413,10 @@ export default class MarketWfrp4e {
   static makeSomeChange(amount, bpRemainder) {
     let gc = 0, ss = 0, bp = 0;
     if (amount >= 0) {
-      gc = Math.floor(amount / 240)
-      amount = amount % 240
-      ss = Math.floor(amount / 12)
-      bp = amount % 12
+      gc = Math.floor(amount / 10000)
+      amount = amount % 10000
+      ss = Math.floor(amount / 100)
+      bp = amount % 100
       bp = bp + ((bpRemainder > 0) ? 1 : 0);
     }
     return { gc: gc, ss: ss, bp: bp };
@@ -443,7 +443,7 @@ export default class MarketWfrp4e {
 */
   static splitAmountBetweenAllPlayers(initialAmount, nbOfPlayers) {
     // convert initialAmount in bp
-    let bpAmount = initialAmount.gc * 240 + initialAmount.ss * 12 + initialAmount.bp;
+    let bpAmount = initialAmount.gc * 10000 + initialAmount.ss * 100 + initialAmount.bp;
     // divide bpAmount by nb of players and get the true remainder
     let bpRemainder = bpAmount % nbOfPlayers;
     bpAmount = Math.floor(bpAmount / nbOfPlayers);
