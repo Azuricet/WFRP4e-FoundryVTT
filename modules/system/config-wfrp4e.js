@@ -457,7 +457,27 @@ WFRP4E.weaponQualities = {
     "impitoyable": "PROPERTY.Impitoyable",
     "pointfaible": "PROPERTY.PointFaible",
     "trebucher": "PROPERTY.Trebucher",
-    "tueur": "PROPERTY.Tueur"
+    "perforant": "PROPERTY.Peforant",
+    "tueur": "PROPERTY.Tueur",
+    "anticharge": "PROPERTY.AntiCharge",
+    "brisedefense": "PROPERTY.BriseDefense",
+    "brisegarde": "PROPERTY.BriseGarde",
+    "cavalerie": "PROPERTY.Cavalerie",
+    "defensif": "PROPERTY.Defensif",
+    "destructeur": "PROPERTY.Destructeur",
+    "devastateur": "PROPERTY.Devastateur",
+    "enchevetrant": "PROPERTY.Enchevetrant",
+    "genant": "PROPERTY.Genant",
+    "groupe": "PROPERTY.Groupe",
+    "perforant": "PROPERTY.Perforant",
+    "impact": "PROPERTY.Impact",
+    "paralysant": "PROPERTY.Paralysant",
+    "rapide": "PROPERTY.Rapide",
+    "ravageur": "PROPERTY.Ravageur",
+    "reactif": "PROPERTY.Reactif",
+    "surprenant": "PROPERTY.Surprenant",
+    "terrifiant": "PROPERTY.Terrifiant",
+    "tranchant": "PROPERTY.Tranchant"
 };
 
 // Weapon Flaws
@@ -533,7 +553,25 @@ WFRP4E.propertyHasValue = {
     "impitoyable": false,
     "pointfaible": false,
     "trebucher": false,
-    "tueur": false
+    "anticharge": false,
+    "brisedefense": false,
+    "brisegarde": false,
+    "cavalerie": false,
+    "destructeur": false,
+    "defensif": false,
+    "devastateur": false,
+    "enchevetrant": false,
+    "genant": false,
+    "groupe": false,
+    "peforant": true,
+    "impact": false,
+    "paralysant": false,
+    "rapide": false,
+    "ravageur": false,
+    "reactif": false,
+    "surprenant": false,
+    "terrifiant": false,
+    "tranchant": false
 }
 
 // Equipment Types

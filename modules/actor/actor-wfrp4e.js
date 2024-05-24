@@ -587,6 +587,7 @@ export default class ActorWfrp4e extends WFRP4eDocumentMixin(Actor)
     impale = weaponProperties?.qualities?.impale
     pummel = weaponProperties?.qualities?.pummel
     zzap = weaponProperties?.qualities?.zzap
+    perforant = weaponProperties?.qualities?.perforant
     
     // see if armor flaws should be triggered
     let ignorePartial = opposedTest.attackerTest.result.roll % 2 == 0 || opposedTest.attackerTest.result.critical
@@ -633,6 +634,12 @@ export default class ActorWfrp4e extends WFRP4eDocumentMixin(Actor)
             layer.ignored = true;
           }
         }
+
+      }
+      else if (perforant) // Ignore 1 AP par niveau de perforant
+      {
+          zzapIgnored += layer.value; this.item.properties.qualities.perforant.value
+          layer.ignored = true;
       }
       else // If nothing is modifying or ignoring, record AP 
       {
