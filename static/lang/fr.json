@@ -526,7 +526,7 @@
     "Hair Colour" : "Cheveux",
     "Eye Colour" : "Yeux",
     "Distinguishing Mark" : "Marque Distinctive",
-    "Star Sign" : "Signe Astral",
+    "Star Sign" : "Blessure Primale",
     "Basic Skills" : "Compétences de Base",
     "Grouped & Advanced Skills" : "Compétences Groupées & Avancées",
     "Creature Traits" : "Traits de Créature",
@@ -1641,8 +1641,8 @@
     "CHAR.Int": "Intelligence",
     "CHAR.WP": "Force Mentale",
     "CHAR.Fel": "Sociabilité",
-    
-    "CHARAbbrev.WS": "CC",
+
+    "CHARAbbrev.WS": "Com",
     "CHARAbbrev.BS": "CT",
     "CHARAbbrev.S": "F",
     "CHARAbbrev.T": "E",
@@ -1769,13 +1769,13 @@
 
     "Commands":"Commandes",
 
-    "NAME.BP" : "Sous de Cuivre",
-    "NAME.SS" : "Pistole d'Argent",
-    "NAME.GC" : "Couronne d'Or",
+    "NAME.BP" : "Prince",
+    "NAME.SS" : "Dame",
+    "NAME.GC" : "Régent",
 
-    "NAME.BPPlural" : "Sous de Cuivre",
-    "NAME.SSPlural" : "Pistoles d'Argent",
-    "NAME.GCPlural" : "Couronnes d'Or",
+    "NAME.BPPlural" : "Princes",
+    "NAME.SSPlural" : "Dames",
+    "NAME.GCPlural" : "Régents",
 
     "TIER.Gold" : "Or",
     "TIER.Silver" : "Argent",
