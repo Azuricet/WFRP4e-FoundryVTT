@@ -552,6 +552,8 @@ export default class ActorWfrp4e extends WFRP4eDocumentMixin(Actor)
     let impale = false;
     // If weapon has Penetrating
     let penetrating = false;
+    // Si l'arme a Perforant
+    let perforant = false;
 
     let zzap = false;
 
@@ -636,11 +638,24 @@ export default class ActorWfrp4e extends WFRP4eDocumentMixin(Actor)
         }
 
       }
-      else if (perforant) // Ignore 1 AP par niveau de perforant
-      {
-          zzapIgnored += layer.value; this.item.properties.qualities.perforant.value
-          layer.ignored = true;
+else if (weaponProperties.qualities?.perforant) { // Check if weapon has the Perforant quality
+  let perforantLevels = weaponProperties.qualities.perforant.value; // Obtain Perforant value from weapon properties
+  if (Number.isFinite(perforantLevels) && perforantLevels > 0) {
+    for (let layer of AP.layers) {
+      let perforantIgnored = Math.min(layer.value, perforantLevels);  // Calculate how much AP is ignored
+      modifiers.ap.details.push(game.i18n.format("BREAKDOWN.Perforant", {
+        ignored: perforantIgnored,
+        item: layer.source.name
+      }));
+      modifiers.ap.ignored += perforantIgnored;  // Track ignored AP
+      layer.value -= perforantIgnored;  // Reduce the layer value by the ignored AP amount
+
+      if (layer.value <= 0) {
+        layer.ignored = true;  // Mark layer as fully ignored if its value is reduced to 0 or less
       }
+    }
+  }
+}
       else // If nothing is modifying or ignoring, record AP 
       {
         if (layer.metal)
