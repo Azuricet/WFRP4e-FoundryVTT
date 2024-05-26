@@ -476,8 +476,7 @@ WFRP4E.weaponQualities = {
     "reactif": "PROPERTY.Reactif",
     "surprenant": "PROPERTY.Surprenant",
     "terrifiant": "PROPERTY.Terrifiant",
-    "tranchant": "PROPERTY.Tranchant",
-    "faiblepenetration": "PROPERTY.Faiblepenetration"
+    "tranchant": "PROPERTY.Tranchant"
 };
 
 // Weapon Flaws
@@ -487,7 +486,8 @@ WFRP4E.weaponFlaws = {
     "reload": "PROPERTY.Reload",
     "slow": "PROPERTY.Slow",
     "tiring": "PROPERTY.Tiring",
-    "undamaging": "PROPERTY.Undamaging"
+    "undamaging": "PROPERTY.Undamaging",
+    "faiblepenetration": "PROPERTY.Faiblepenetration"
 };
 
 // Armor Qualities
