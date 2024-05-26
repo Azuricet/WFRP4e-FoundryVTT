@@ -476,7 +476,8 @@ WFRP4E.weaponQualities = {
     "reactif": "PROPERTY.Reactif",
     "surprenant": "PROPERTY.Surprenant",
     "terrifiant": "PROPERTY.Terrifiant",
-    "tranchant": "PROPERTY.Tranchant"
+    "tranchant": "PROPERTY.Tranchant",
+    "faiblepenetration": "PROPERTY.Faiblepenetration"
 };
 
 // Weapon Flaws
@@ -566,13 +567,13 @@ WFRP4E.propertyHasValue = {
     "perforant": true,
     "impact": false,
     "paralysant": false,
-    "perforant": true,
     "rapide": false,
     "ravageur": false,
     "reactif": false,
     "surprenant": false,
     "terrifiant": false,
-    "tranchant": false
+    "tranchant": false,
+    "faiblepenetration": false
 }
 
 // Equipment Types

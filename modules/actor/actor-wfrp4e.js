@@ -554,6 +554,8 @@ export default class ActorWfrp4e extends WFRP4eDocumentMixin(Actor)
     let penetrating = false;
     // Si l'arme a Perforant
     let perforant = false;
+    // Si l'arme a Faiblepenetration
+    let faiblepenetration = false;
 
     let zzap = false;
 
@@ -590,6 +592,7 @@ export default class ActorWfrp4e extends WFRP4eDocumentMixin(Actor)
     pummel = weaponProperties?.qualities?.pummel
     zzap = weaponProperties?.qualities?.zzap
     perforant = weaponProperties?.qualities?.perforant
+    faiblepenetration = weaponProperties?.qualities?.faiblepenetration
     
     // see if armor flaws should be triggered
     let ignorePartial = opposedTest.attackerTest.result.roll % 2 == 0 || opposedTest.attackerTest.result.critical
@@ -656,6 +659,11 @@ else if (weaponProperties.qualities?.perforant) { // Check if weapon has the Per
     }
   }
 }
+else if (faiblepenetration && layer.metal) // If penetrating - ignore 1 or all armor depending on material
+      {
+          modifiers.ap.details.push(game.i18n.format("BREAKDOWN.Faibledefense", {ignored: 2, item: layer.source.name}))
+          modifiers.ap.ignored -= 2
+  }
       else // If nothing is modifying or ignoring, record AP 
       {
         if (layer.metal)
